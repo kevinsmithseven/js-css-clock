@@ -1,104 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
 <body>
 
     <div class="clock">
         <div class="clock-face">
+
+            <!-- Hour markers -->
+            <div class="number" id="number1">1</div>
+            <div class="number" id="number2">2</div>
+            <div class="number" id="number3">3</div>
+            <div class="number" id="number4">4</div>
+            <div class="number" id="number5">5</div>
+            <div class="number" id="number6">6</div>
+            <div class="number" id="number7">7</div>
+            <div class="number" id="number8">8</div>
+            <div class="number" id="number9">9</div>
+            <div class="number" id="number10">10</div>
+            <div class="number" id="number11">11</div>
+            <div class="number" id="number12">12</div>
+
             <div class="hand hour-hand"></div>
             <div class="hand min-hand"></div>
             <div class="hand second-hand"></div>
         </div>
     </div>
 
-  <style>
-    html {
-        background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=10);
-        background-size: cover;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        font-size: 10px;
-    }
+    <style>
+        html {
+            background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=10);
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 10px;
+        }
 
-    body {
-        font-size: 2rem;
-        display: flex;
-        flex: 1;
-        min-height: 100vh;
-        align-items: center;
-    }
+        body {
+            font-size: 2rem;
+            display: flex;
+            flex: 1;
+            min-height: 100vh;
+            align-items: center;
+        }
 
-    .clock {
-        width: 30rem;
-        height: 30rem;
-        border: 20px solid white;
-        border-radius: 50%;
-        margin: 50px auto;
-        position: relative;
-        padding: 2rem;
-        box-shadow: 
-            0 0 0px 4px rgba(0,0,0,0.1),
-            inset 0 0 0 3px #EFEFEF,
-            inset 0 0 10px black,
-            0 0 10px rgba(0,0,0,0.2);
-    }
+        .clock {
+            width: 30rem;
+            height: 30rem;
+            border: 20px solid white;
+            border-radius: 50%;
+            margin: 50px auto;
+            position: relative;
+            padding: 2rem;
+            box-shadow:
+                0 0 0px 4px rgba(0, 0, 0, 0.1),
+                inset 0 0 0 3px #EFEFEF,
+                inset 0 0 10px black,
+                0 0 10px rgba(0, 0, 0, 0.2);
+        }
 
-    .clock-face {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transform: translateY(-3px);
-    }
+        .clock-face {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-3px);
+        }
 
-    .hand {
-        width: 50%;
-        height: 6px;
-        background: black;
-        position: absolute;
-        top: 50%;
-        transform-origin: 100%;
-        transform: rotate(90deg);
-        transition: all 0.05s;
-        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-    }
+        .number {
+            position: absolute;
+            color: black;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+        }
 
-  </style>
+        #number1 {
+            transform: translate(-50%, -50%) rotate(300deg) translate(17.8rem) rotate(-300deg);
+        }
 
-<script>
+        #number2 {
+            transform: translate(-50%, -50%) rotate(330deg) translate(17.8rem) rotate(-330deg);
+        }
 
-    const secondHand = document.querySelector('.second-hand');
-    const minHand = document.querySelector('.min-hand');
-    const hourHand = document.querySelector('.hour-hand');
-    function setDate() {
-       const now  = new Date();   
-              
-       const seconds = now.getSeconds();
-       const secondsDegrees = ((seconds / 60) * 360) + 90;
-       secondHand.style.transform = `rotate(${secondsDegrees}deg)`; 
-              
-       const minutes = now.getMinutes();
-       const minDegrees = ((minutes / 60) * 360) + 90;
-       minHand.style.transform = `rotate(${minDegrees}deg)`;
-       
-       const hours = now.getHours();
-       const hourDegrees = ((hours / 12) * 360) + 90;
-       hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+        #number3 {
+            transform: translate(-50%, -50%) rotate(360deg) translate(17.8rem) rotate(-360deg);
+        }
 
-    //    console.log(seconds);
-    //    console.log(minutes);
-    //    console.log(hours);
-    }
+        #number4 {
+            transform: translate(-50%, -50%) rotate(30deg) translate(17.8rem) rotate(-30deg);
+        }
 
-    setInterval(setDate, 1000)
-    setDate();
+        #number5 {
+            transform: translate(-50%, -50%) rotate(60deg) translate(17.8rem) rotate(-60deg);
+        }
 
-    
+        #number6 {
+            transform: translate(-50%, -50%) rotate(90deg) translate(17.8rem) rotate(-90deg);
+        }
+
+        #number7 {
+            transform: translate(-50%, -50%) rotate(120deg) translate(17.8rem) rotate(-120deg);
+        }
+
+        #number8 {
+            transform: translate(-50%, -50%) rotate(150deg) translate(17.8rem) rotate(-150deg);
+        }
+
+        #number9 {
+            transform: translate(-50%, -50%) rotate(180deg) translate(17.8rem) rotate(-180deg);
+        }
+
+        #number10 {
+            transform: translate(-50%, -50%) rotate(210deg) translate(17.8rem) rotate(-210deg);
+        }
+
+        #number11 {
+            transform: translate(-50%, -50%) rotate(240deg) translate(17.8rem) rotate(-240deg);
+        }
+
+        #number12 {
+            transform: translate(-50%, -50%) rotate(270deg) translate(17.8rem) rotate(-270deg);
+        }
+
+        .hand {
+            width: 50%;
+            height: 6px;
+            background: black;
+            position: absolute;
+            top: 50%;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+            transition: all 0.05s;
+            transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+        }
+
+        .second-hand {
+            height: 3px;
+            border-radius: 10%;
+            background-color: white;
+        }
+
+        .min-hand {
+            height: 4.5px;
+        }
+
+    </style>
+
+    <script>
+
+        const secondHand = document.querySelector('.second-hand');
+        const minHand = document.querySelector('.min-hand');
+        const hourHand = document.querySelector('.hour-hand');
+        function setDate() {
+            const now = new Date();
+
+            const seconds = now.getSeconds();
+            const secondsDegrees = ((seconds / 60) * 360) + 90;
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+            const minutes = now.getMinutes();
+            const minDegrees = ((minutes / 60) * 360) + 90;
+            minHand.style.transform = `rotate(${minDegrees}deg)`;
+
+            const hours = now.getHours();
+            const hourDegrees = ((hours / 12) * 360) + 90;
+            hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+            //    console.log(seconds);
+            //    console.log(minutes);
+            //    console.log(hours);
+        }
+
+        setInterval(setDate, 1000)
+        setDate();
 
 
-</script>
-    
+
+
+    </script>
+
 </body>
+
 </html>
